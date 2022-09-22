@@ -1,0 +1,12 @@
+language: minimal
+
+services: docker
+
+script:
+  - docker -v && docker-compose -v
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker-compose -f ./docker-compose-build.yaml build
+  - docker push hauhtc/udagram-frontend:v1
+  - docker push hauhtc/udagram-api-feed:v1
+  - docker push hauhtc/udagram-api-user:v1
+  - docker push hauhtc/reverseproxy:v1

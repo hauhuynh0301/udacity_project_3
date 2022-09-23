@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+data:
+  AWS_BUCKET: mys3bucket1331
+  AWS_PROFILE: default
+  AWS_REGION: us-east-1
+  POSTGRES_DB: postgres
+  POSTGRES_HOST: udacity.c55npemucqtr.us-east-1.rds.amazonaws.com
+  URL: http://localhost:8100  
+metadata:
+  name: env-config
+  namespace: default
